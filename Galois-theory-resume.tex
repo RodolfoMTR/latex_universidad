@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\I}{\mathbb I}
+\usepackage[left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.5cm]{geometry}
+\title{Galois Theory}
+\author{Rodolfo Turpo Ramos}
+\date{Today}
+\newtheorem*{remark}{Observación}
+\begin{document}
+	\maketitle
+	\noindent\textbf{\large Divisibilidad}\\
+	Sea $f,g\in \C[x]$. Luego $f$ divide a $g$ si existe un $h(x)\in\C[x]$ tal que $g(x)=f(x)h(x)$.\\
+	\textbf{Notación:}$f$ divide a $g$ se denota como $f\mid g$\\
+	\textbf{\large Algoritmo de la división}
+	\begin{itemize}
+		\item $f,g\in\C[x]$, existen $q,r\in \C[x]$ tal que $g=fq+r$
+		\item $f,g\in k[x]$, existen $q,r\in k[x]$ tal que $g=fq+r$,$\partial r<\partial f$
+	\end{itemize}
+	\textbf{\large Propiedad}\\
+	Sean $f,g_1,g_2$ polinomios en $K[x]$, si $f|g_1$ y $f|g_2$ entonces $f|(g_1+g_2)$.
+	\section{Polinomios irreducibles}
+	\subsection{Definición}
+	Un polinomio no constante sobre el subanillo $R$ de $\C$ ese reducible si se puede expresar como el producto de dos polinomios sobre $R$ de menor grado. De lo contrario es irreducible.
+	\subsection{definición}
+	Un polinomio de $K[x]$($K$ es un subcampo de de $\C$) es el máximo común divisor (MCD) de $f$ y $g$ si $d|f$ y $d|g$, además si $e|f$ y $e|g$, entonces $e|d$.
+	\subsection{Propiedades de MCD}
+	$f,g\in K[x]\, ,(f,g\neq 0)\,,\, d=MCD(f,g)$. Entonces existen $a,b\in K[x]$ tal que\[d=af+bg\quad .....(*)\]
+	\subsection{Unicidad de la factorización en $K[x]$}
+	la factorización de polinomios sobre $K[x]$ en polinomios irreducibles es única salvo factores constantes y el orden en que los factores son escritos
+	\section{Criterios de irreducibilidad}
+	\subsection{Lema de Gauss}
+	Sea $f$ un polinomio sobre $\mathbb{Z}$ tal que es irreducible sobre $\mathbb{Z}$. Luego consideremos a $f$ como un polinomio sobre $\mathbb{Q}$, $f$ también es un polinomio irreducible sobre $\mathbb{Q}$.
+	\subsection{Teorema  (Criterio de Eisenstein)}
+	\noindent sea 
+	\[
+	f(t) = a_0 + a_1 t + \cdots + a_n t^n
+	\]
+	un polinomio sobre $\Z$. Supongamos que existe un $q$ tal que
+	\begin{enumerate}
+		\item $q \nmid a_n$
+		\item $q \mid a_i \quad (i = 0, \ldots, n-1)$
+		\item $q^2 \nmid a_0$
+	\end{enumerate}
+	Entonces $f$ es irreducible sobre $\Q$.\\
+	\textbf{\large Lema}\\
+	Sea $p$ primo, entonces el coeficiente binomial \[\binom{p}{r}=\frac{p!}{r!(p-r)!}\] es divisible por $p$, si $1\leq r\leq p-1$\\
+	\textbf{\large Congruencia}\\
+	Sea $d\in\mathbb Z,\,d\neq 0$. Dados $a,b\in\mathbb Z$, se dice que $a$ es \textit{congruente} a $b$ módulo $d$ si $d|a-b$.
+	\[a\equiv b(mod\, d)\Longleftrightarrow d|a-b.\quad d\neq 0\]
+\end{document}

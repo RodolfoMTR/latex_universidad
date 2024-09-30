@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\I}{\mathbb I}
+\title{Galois Theory}
+\author{Rodolfo Turpo Ramos}
+\date{Today}
+\newtheorem*{remark}{Observación}
+\begin{document}
+\maketitle
+\section{Ecuación cúbica}
+\[at^3+bt^2+ct+d=0\quad a\neq 0\]
+\textbf{\large Solución}\\
+Dividiendo por $a$.
+\[t^3+at^2+bt+c=0......(1)\]
+El primer paso es hacer un cambio de variable para remover el coeficiente de $t^2$
+\[y=t+\frac{a}{3}\rightarrow t=y-\frac{a}{3}\]
+\begin{align*}
+    t^2&=\left(y-\frac{a}{3}\right)^2=y^2-\frac{2a}{3}y+\frac{a^2}{9}\\
+    t^3&=\left(y-\frac{a}{3}\right)^3=y^3-ay^2+\frac{a^2}{3}y-\frac{a^3}{27}
+\end{align*}
+Reemplazar en (1)
+\[\left(y-\frac{a}{3}\right)^3=y^3-ay^2+\frac{a^2}{3}y-\frac{a^3}{27}+a\left(y^2-\frac{2a}{3}y+\frac{a^2}{9}\right)+b\left(y-\frac{a}{3}\right)=0\]
+\[y^3+\left(-a+a\right)y^2+\left(\frac{a^2}{3}-\frac{2}{3}a^2+b\right)y+\left(\frac{-a^3}
+{27}+\frac{3a^3}{27}-\frac{ab}{3}+c\right)=0\]
+\[y^3+\left(-\frac{a^2}{3}+b\right)y+\left(\frac{2a^3}
+{27}-\frac{ab}{3}+c\right)=0\]
+\[p=\left(-\frac{a^2}{3}+b\right)\quad,\quad q=\left(\frac{2a^3}
+{27}-\frac{ab}{3}+c\right)\]
+\[y^3+py+q=0\rightarrow\text{cubica reducida}\]
+Hacemos otra sustitución para resolver la cúbica reducida
+\[y=z-\frac{p}{3z}\]
+\begin{align*}
+    y^3&=\left(z-\frac{p}{3z}\right)^3=z^3-pz+\frac{p^2}{3z}-\frac{p^3}{27z^3}
+\end{align*}
+reemplazando en la ec. cúbica reducida
+\[z^3-pz+\frac{p^2}{3z}-\frac{p^3}{27z^3}+p\left(z-\frac{p}{3z}\right)+q=0\]
+\[z^3+q-\frac{p^3}{27z^3}=0\]
+Multiplicamos por $z^3$
+\begin{align*}
+    z^6+qz^3-\frac{p^3}{27}&=0\\
+    (z^3)^2+qz^3-\frac{p^3}{27}&=0\\
+    z^3&=\frac{1}{2}\left(-q\pm\sqrt{q^2+4\frac{p^3}{27}}\right)\\
+    z&=\sqrt[3]{\frac{1}{2}\left(-q\pm\sqrt{q^2+4\frac{p^3}{27}}\right)}
+\end{align*}
+Para finalizar, usaremos las raíces cúbicas de la unidad
+\begin{align*}
+    w^3&=1\\
+    w^3-1&=0\\
+    (w-1)(w^2+w+1)&=0\\
+    w-1=0\quad\lor&\quad w^2+w+1=0\\
+    w=1\quad\lor\quad& w=\frac{-1\pm\sqrt{3}i}{2}
+\end{align*}
+las raíces cúbicas de 1 son: $1,w=\frac{-1+\sqrt{3}i}{2},w^2=\frac{-1-\sqrt{3}}{2}$\\
+Fijemos $\delta=\sqrt{q^2+\frac{4p^3}{27}}$. con esta elección, sea $z_1=\sqrt[3]{\frac{1}{2}\left(-q+\sqrt{q^2+\frac{4p^3}{27}}\right)}$, donde $z_1$ es raíz cúbica fija de $\frac{1}{2}(-q+\delta)$.\\
+Obtenemos las otras dos raíces cúbicas multiplicando por $w$ y $w^2$.\\
+Si hacemos $z_2=-\frac{p}{3z_1}$, entonces $y_1=z_1+z_2=z_1-\frac{p}{3z_1}$ es una raiz de la cúbica reducida.
+\begin{align*}
+    z_1^3z_2^3&=z_1^3\left(-\frac{p}{3z_1}\right)^3=z_1^3\left(-\frac{p^3}{27z_1^3}\right)=-\frac{p^3}{27}\\
+    z^3\cdot \frac{1}{2}\left(-q-\sqrt{q^2+\frac{4p^3}{27}}\right)&=\frac{1}{2}\left(-q+\sqrt{q^2+\frac{4p^3}{27}}\right)\cdot \frac{1}{2}\left(-q-\sqrt{q^2+\frac{4p^3}{27}}\right)\\&=\frac{1}{4}\left[q^2-\left(q^2+\frac{4p^3}{27}\right)\right]=-\frac{p^3}{27}\\
+\end{align*}
+
+\end{document}

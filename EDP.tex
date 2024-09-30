@@ -1,0 +1,265 @@
+\documentclass{article}
+\usepackage[14pt]{extsizes}%modified font size
+%--------------REFERENCIAS,CITAS
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+%--------------------
+\usepackage{tikz}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\I}{\mathbb I}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\title{Ecuaciones Diferenciales Parciales\\Apuntes de Clase}
+\author{Rodolfo Turpo Ramos}
+\date{\Today}
+%------------------DEFINICIONES,THEOREMAS,LEMAS
+\newtheorem{definition}{Definición}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem{Acla}{Aclaración}
+%-----------------------------------------
+\begin{document}
+\maketitle
+\noindent Una EDP es de la forma
+\begin{equation}\label{eq:1}
+    F\left(x,u(x),\frac{\partial u(x)}{\partial x_n},...,\frac{\partial^k u(x)}{\partial k_n^k}\right)=0
+\end{equation}
+donde $x=(x_1,x_2,...,x_n)\in\Omega\subset\R^n$, $\Omega$ conjunto abierto, y $F=\R^n\rightarrow\R$ es una función de valores reales, $u=u(x_1,x_2,...,x_n)$ es una función de valores reales a ser determinada.
+\begin{equation}\label{eq:2}
+    a(x,y,u)u_x+b(x,y,u)u_y=c(x,y,u)
+\end{equation}
+Asumiremos que los coeficientes $a,b,c$ están en $C^1(\Omega)$[\ref{claseCk}], donde $\Omega$ es un abierto de $\R^3$.
+
+\begin{definition}
+    Decimos que la función $z=u(x,y)$ es solución de (\ref{eq:2}) si al sustituir $u(x,y)$ y sus derivadas parciales en (\ref{eq:2}) la igualdad es satisfecha
+\end{definition}
+Si $u(x,y)$ es una solución de (\ref{eq:2}), entonces la superficie $S:z=u(x,y)$ es llamada \textbf{superficie integral}.
+
+Analizando la ecuación (\ref{eq:2}) se tiene
+\[a(x,y,u)u_x+b(x,y,u)u_y-c(x,y,u)=0\]
+\[(a(x,y,u),b(x,y,u),c(x,y,u))\cdot(u_x,u_y,-1)=0\]
+Tenemos que el vector es perpendicular a la superficie en cada punto $(x,y,u(x,y))$, así concluimos que el vector
+\[(a(x,y,u),b(x,y,u),c(x,y,u))\]
+esta en el plano tangente a $S$ en el punto $(x,y,u(x,y))$.\\\\
+Luego, para encontrar una solución de (\ref{eq:2}) buscamos una superficie $S$ tal que cada punto $(x,y,z)\in S$, el vector $(a(x,y,u),b(x,y,u),c(x,y,u))$ esta en el plano tangente.
+%---------------
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,310); %set diagram left start at 0, and has height of 310
+
+%Straight Lines [id:da35930140838815205] 
+\draw    (274,171) -- (181.94,238.81) ;
+\draw [shift={(180.33,240)}, rotate = 323.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6415731248171619] 
+\draw    (274,171) -- (449.34,181.88) ;
+\draw [shift={(451.33,182)}, rotate = 183.55] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9167883496117235] 
+\draw    (274,171) -- (271.37,32) ;
+\draw [shift={(271.33,30)}, rotate = 88.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da12665448711590543] 
+\draw    (224,76) .. controls (264,46) and (329.33,92.67) .. (394.33,85.67) ;
+%Curve Lines [id:da7036971594277275] 
+\draw    (206.33,114.67) .. controls (246.33,68.67) and (316.33,149.67) .. (366.33,122.67) ;
+%Curve Lines [id:da9691381727355819] 
+\draw    (206.33,114.67) .. controls (216.33,94.67) and (221.33,93.67) .. (224,76) ;
+%Curve Lines [id:da8024962517862637] 
+\draw    (366.33,122.67) .. controls (373.33,114.67) and (377.33,110.67) .. (394.33,85.67) ;
+%Curve Lines [id:da222659119356722] 
+\draw    (291.82,84.52) .. controls (306.33,85.67) and (328.43,89.14) .. (354.33,90.09) ;
+%Curve Lines [id:da118047259755522] 
+\draw    (285.33,106.8) .. controls (306.33,101.67) and (324.33,113.67) .. (344.06,111.41) ;
+%Curve Lines [id:da9590822247520412] 
+\draw    (285.33,106.8) .. controls (289,95.28) and (290.84,94.7) .. (291.82,84.52) ;
+%Curve Lines [id:da18445155235249655] 
+\draw    (344.06,111.41) .. controls (346.63,106.8) and (348.09,104.5) .. (354.33,90.09) ;
+%Straight Lines [id:da7216287831356012] 
+\draw    (323,101) -- (324.29,36.67) ;
+\draw [shift={(324.33,34.67)}, rotate = 91.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Right Angle [id:dp9568385576490548] 
+\draw   (323,91.52) -- (332.43,91.52) -- (332.43,101) ;
+%Curve Lines [id:da4687299226722863] 
+\draw    (247.43,99.29) .. controls (248.43,90.29) and (254.43,75.29) .. (265.43,65.29) ;
+%Curve Lines [id:da25109303997956256] 
+\draw    (266.43,104.29) .. controls (267.43,95.29) and (273.43,80.29) .. (284.43,70.29) ;
+%Curve Lines [id:da42831794563894365] 
+\draw    (279.43,109.29) .. controls (280.43,100.29) and (292.33,82.8) .. (303.33,72.8) ;
+%Curve Lines [id:da7010024782358204] 
+\draw    (366.33,122.67) .. controls (367.33,113.67) and (371.43,96.29) .. (382.43,86.29) ;
+%Curve Lines [id:da7897636769039607] 
+\draw    (347.43,128.29) .. controls (348.43,119.29) and (358.43,95.29) .. (369.43,85.29) ;
+%Curve Lines [id:da3365340991432142] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (328.43,127.29) .. controls (329.43,118.29) and (338.43,92.29) .. (349.43,82.29) ;
+%Curve Lines [id:da0894699407301558] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (301.43,122.29) .. controls (302.43,113.29) and (313.43,86.29) .. (324.43,76.29) ;
+%Curve Lines [id:da24186293326871255] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (314.43,123.29) .. controls (315.43,114.29) and (325.43,90.29) .. (336.43,80.29) ;
+%Curve Lines [id:da3069711615407609] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (292.43,115.29) .. controls (293.43,106.29) and (303.43,84.29) .. (314.43,74.29) ;
+
+% Text Node
+\draw (191,238.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+% Text Node
+\draw (453.33,185.4) node [anchor=north west][inner sep=0.75pt]    {$y$};
+% Text Node
+\draw (253,15.4) node [anchor=north west][inner sep=0.75pt]    {$z$};
+% Text Node
+\draw (226,79.4) node [anchor=north west][inner sep=0.75pt]    {$S$};
+% Text Node
+\draw (334,28.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\nabla U$};
+% Text Node
+\draw (365,146.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$U( x,y,z) =z-u( x,y)$};
+
+
+\end{tikzpicture}
+
+\end{center}
+%--------
+Podemos ver la superficie $S$ como una unión de curvas, $C$, en cada punto de estas el vector tangente tiene que ser paralelo al vector $(a,b,c)$. Esto hará que cada punto de $S$ tangencíe al campo $(a,b,c)$. Por lo tanto $C$ satisface el sistema de EDO's autónomo
+\begin{equation*}
+    \frac{\partial x}{\partial t}=a(x,y,z) \quad \frac{\partial y}{\partial t}=b(x,y,z) \quad \frac{\partial z}{\partial t}=c(x,y,z)
+\end{equation*}
+llamadas ecuaciones características de (\ref{eq:2}). La curva $C$ es llamada \textbf{curva característica del campo vectorial característico}.
+\begin{equation*}
+    (a(x,y,u),b(x,y,u),c(x,y,u))
+\end{equation*}
+\begin{theorem}
+    Sea la superficie $S$ una unión de curvas características[\ref{caracteristica}], entonces $S$ es una superficie integral.
+\end{theorem}
+\begin{theorem}
+    Sea $P_0=(x_0,y_0,z_0)$ un punto de la superficie integral $S:z=u(x,y)$. Sea $\gamma$ una curva característica pasando por $P_0$. Entonces $\gamma$ esta en $S$.
+\end{theorem}
+
+
+
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,310); %set diagram left start at 0, and has height of 310
+
+%Straight Lines [id:da8254213038403884] 
+\draw    (274,171) -- (181.94,238.81) ;
+\draw [shift={(180.33,240)}, rotate = 323.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3474703967983961] 
+\draw    (274,171) -- (449.34,181.88) ;
+\draw [shift={(451.33,182)}, rotate = 183.55] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1447213016359996] 
+\draw    (274,171) -- (271.37,32) ;
+\draw [shift={(271.33,30)}, rotate = 88.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da5852406220745772] 
+\draw    (285.33,144) .. controls (322.33,142) and (334.33,53) .. (402.33,48) ;
+%Shape: Polygon [id:ds12943196028466897] 
+\draw   (426.33,87) -- (390.33,122) -- (204.33,121) -- (248.33,86) -- cycle ;
+%Flowchart: Connector [id:dp7474412669917274] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (367,105) .. controls (367,103.34) and (368.87,102) .. (371.17,102) .. controls (373.47,102) and (375.33,103.34) .. (375.33,105) .. controls (375.33,106.66) and (373.47,108) .. (371.17,108) .. controls (368.87,108) and (367,106.66) .. (367,105) -- cycle ;
+%Flowchart: Connector [id:dp6613260207349623] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (323,106) .. controls (323,104.34) and (324.87,103) .. (327.17,103) .. controls (329.47,103) and (331.33,104.34) .. (331.33,106) .. controls (331.33,107.66) and (329.47,109) .. (327.17,109) .. controls (324.87,109) and (323,107.66) .. (323,106) -- cycle ;
+%Shape: Brace [id:dp6168521952913582] 
+\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ] (371,105) .. controls (375.67,105.03) and (378.02,102.72) .. (378.05,98.05) -- (378.1,91.55) .. controls (378.15,84.88) and (380.5,81.57) .. (385.17,81.6) .. controls (380.5,81.57) and (378.19,78.22) .. (378.24,71.55)(378.22,74.55) -- (378.29,65.05) .. controls (378.32,60.38) and (376.01,58.03) .. (371.34,58) ;
+%Straight Lines [id:da8729761784471117] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (327.17,109) -- (328.33,199) ;
+%Straight Lines [id:da27099475672510853] 
+\draw    (248.33,189) -- (328.33,199) ;
+%Straight Lines [id:da47851492063817136] 
+\draw    (328.33,199) -- (338.33,176) ;
+
+% Text Node
+\draw (388,74.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$u( t) =z( t) -u( x( t) ,y( t) ,z( t))$};
+% Text Node
+\draw (300,88.4) node [anchor=north west][inner sep=0.75pt]    {$P_0$};
+% Text Node
+\draw (191,238.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+% Text Node
+\draw (453.33,185.4) node [anchor=north west][inner sep=0.75pt]    {$y$};
+% Text Node
+\draw (398,32.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\gamma :\text{Esto no puede ocurrir}$};
+
+
+\end{tikzpicture}
+\end{center}
+Se tiene que demostrar que $u(t)$ es Nula. la demostración se deja al lector.
+
+\noindent Sea $\gamma$ una curva característica que pasa por $P_0$, por el teorema anterior, $\gamma$ tiene que estar en $S_1$ y $S_2$. Es decir, si dos superficies integrales tienen un punto en común, ellas contienen una curva característica que pasa por ese punto.
+
+Una forma de seleccionar una curva $u(x,y)$ particular de un conjunto infinito de soluciones de (\ref{eq:2}), consiste en preescribir una curva $\gamma$ contenida en $S: z=u(x,y)$.\\
+Sea $\gamma:x=f(s)\,, y=g(s)\,, z=h(s)$, donde $\gamma$ esta representada parametricamente, estamos interesados en una solución de (\ref{eq:2}) tal que 
+\begin{equation*}
+    h(s)=u(f(s),g(s))
+\end{equation*}
+para todo $s$. Este problema es llamados \textbf{problema de cauchy} para (\ref{eq:2}). Estaremos satisfechos con una solución local $u$ de nuestro problema definido para $x,y$ proximos a los valores
+\begin{equation*}
+    x_0=f(s_o)\quad,\quad y_0=g(s_0)
+\end{equation*}
+Un caso especial del problema de cauchy es cuando $\gamma$ es de la siguiente forma
+\begin{equation*}
+    x=s\, ,\, y=0\, ,\, z=h(s)
+\end{equation*}
+La proyección de $\gamma$ es el plano XY es una curva
+\begin{equation*}
+    \Gamma =\{(f(s),g(s))\}
+\end{equation*}
+\begin{definition}[Condición de transversabilidad]
+    Decimos que $\Gamma$ es una curva no-característica si para ningún $S$ esta no es tangente al campo vectorial característico proyectado
+    \begin{equation*}
+        (a(f(s),g(s),h(s)),b(f(s),g(s),h(s)))
+    \end{equation*}
+    Es decir
+    \begin{equation*}
+        (-g'(s),f'(s))\cdot(a(f(s),g(s),h(s)),b(f(s),g(s),h(s)))\neq 0
+    \end{equation*}
+    Esta condición nos dice que el campo característico proyectado en el plano $xy$, $(a(x,y,z),b(x,y,z))$ es transversal a $\Gamma$ en cada punto.
+\end{definition}
+Para resolver el problema de cauchy, a partir de cada punto de la curva $\gamma=\{(f(s),g(s),h(s)\}$, construiremos una curva característica pasando por el mismo, con esto nuestras curvas características serán parametrizadas por dos parámetros $s$ y $t$, es decir
+\begin{align*}
+    x&=X(s,t)\\
+    y&=Y(s,t)\\
+    z&=Z(s,t)
+\end{align*}
+Siendo que $s$ nos da información del punto de $\gamma$ donde la curva característica esta pasando y $t$ es el parametro que usamos para parametrizar la curva característica (para un $s$ fijo). Por tanto tenemos que resolver el sistema de EDO's
+\begin{equation*}
+    \frac{\partial x}{\partial t}=a(a,y,z)\, ,\, \frac{\partial y}{\partial t}=b(a,y,z)\, ,\, \frac{\partial z}{\partial t}=c(a,y,z)
+\end{equation*}
+que satisface las condiciones
+\begin{equation*}
+    x(s,0)=f(s)\, ,\, y(s,0)=g(s)\, ,\, z(s,0)=h(s)
+\end{equation*}
+asumiremos que $a,b,c,f,g,h$ son de clase $C^1$. Sigue de la teoria de EDO que el problema arriba tiene solución única
+\begin{equation*}
+    (X(s,t),Y(s,t),Z(s,t))
+\end{equation*}
+%--------APENDICE-conceptos previos
+\section{Apéndice}
+\begin{Acla}[curva característica]\label{caracteristica}
+    estas curvas poseen un \textbf{carácter especial} dentro del problema de la EDP: son las únicas direcciones o trayectorias en las que la ecuación puede ser resuelta de manera particular y simplificada, revelando información clave sobre el comportamiento de la solución.
+\end{Acla}
+\begin{definition}[Funciones de clase $C^k$]\label{claseCk}
+    Si \( f : A \subset \mathbb{R}^n \to \mathbb{R} \), entonces \( f \in C^k(A) \) significa que todas las derivadas parciales de \( f \) hasta orden \( k \) existen y son continuas en el dominio \( A \).
+
+\textbf{ Ejemplos:}
+\begin{itemize}
+    \item Una función es de clase \( C^0 \) si es \textbf{continua}.
+    \item Una función es de clase \( C^1 \) si es continua y tiene primeras derivadas continuas.
+    \item Una función es de clase \( C^\infty \) (infinitamente diferenciable) si tiene derivadas continuas de todos los órdenes.
+\end{itemize}
+\end{definition}
+\end{document}

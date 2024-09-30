@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage[14pt]{extsizes}%modified font size
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\I}{\mathbb I}
+\title{Análisis en $\R^n$}
+\author{Rodolfo Turpo R.}
+\date{\today}
+\begin{document}
+\maketitle
+\section{Espacios Métricos}
+\noindent\textbf{punto interior}
+
+sea $E\subset X$ y $x_0\in X$
+
+\[x_0\text{ es punto interior de $E$ si }\exists r>0/B(x_0,r)\subset E\]
+
+Si $x_0$ es un punto interior de $E$, entonces $x_0$ en realidad debe ser un elemento de $E$
+
+El conjunto de todos los puntos interiores de $E$ se denota por $E'$
+
+\noindent\textbf{punto adherente}
+
+Sea $E\subset X$ y $x_0\in X$, entonces
+
+\[x_0 \text{ es punto adherente de }E\,\Leftrightarrow \forall r>0\, B(x_0,r)\cap E\neq \emptyset\]
+
+El conjunto de puntos adherentes de X se llama \textbf{cerradura} de X y se denota con $\overline{X}$
+\[x_0 \in \overline{X} \text{ si }\forall r>0\, B(x_0,r)\cap E\neq \emptyset\]
+
+\noindent\textbf{punto de acumulación}
+
+$p$ es punto de acumulación de X, si y sólo si, $\exists (x_n)_{n\in m}$ de X de modo que $x_n\neq 0\forall n\in N$ tal que $ x_n \rightarrow p$
+
+\noindent\textbf{Conjunto Cerrado}
+
+Un conjunto $X$ es cerrado si coincide con su cerradura $(\overline{X})$
+
+$X$ es cerrado si $\forall p\in \overline{X}\,\exists\varepsilon>0/B(p,\varepsilon)\cap X\neq 0$
+
+\noindent\textbf{Conjunto Abierto}
+
+$A\subset\R^n$ es abierto si $\forall p\in A\,\exists\varepsilon>0/B(p,\varepsilon)\subset A$
+
+\noindent\textbf{Conjunto Compacto}
+
+$x\subset\R^n$ es un conjunto compacto si es cerrado y acotado.
+
+\noindent\textbf{Conjunto conexo}
+
+Un conjunto es conexo cuando no admite separación, osea, $X\subset\R^n$ es conexo cuando no se puede expresar como la unión disjunta de dos conjuntos abiertos de $X$
+%--------------------------------------------------------------
+
+\section{Diferenciación en $\R^n$}
+
+\subsection{Derivada Parcial}
+
+Sea $U\subset\R^n\rightarrow\R$ una función definida en un abierto $U\subset\R^n$.Para todo $v=(\alpha_1,...,\alpha_n)\in \R^n$ con $a+v\in U$, la i-ésima derivada parcial de $f$ en $a\in U$  es el limite
+\[\frac{\partial f}{\partial x_i}(a)=\lim_{t\rightarrow 0}\frac{f(a+te_i)-f(a)}{t}\] cuando tal limite existe.
+
+\subsection{Derivada direccional}
+
+Sea $U\subset\R^n\rightarrow\R$ una función definida en un abierto $U\subset\R^n$. la derivada direccional de $f$ en $a\in U$ en la dirección $v\in R^n$ es definida como
+\[\frac{\partial f}{\partial v}(a)=\lim_{t\rightarrow0}\frac{f(a+tv)-f(a)}{t}\]
+Siempre que este limite exista.
+
+\subsection{Funciones diferenciables}
+
+Sea $U\subset\R^n\rightarrow\R$ una función definida en un abierto $U\subset\R^n$. Decimos que $f$ es \textbf{Diferenciable} en $a\in U$ si para todo $v=(\alpha_1,...,\alpha_n)\in \R^n$ con $a+v\in U$ se tiene que existen constantes $A_1,...,A_n$ de modo que 
+\[f(a+v)-f(a)=A_1\alpha_1+...+A_n\alpha_n+r(v)\text{ donde } \lim_{v\rightarrow0} \frac{r(v)}{|v|}=0\]
+
+\textbf{Observaciones}
+\begin{itemize}
+    \item si $A=(A_1,...,A_n)$, entonces $A_1\alpha_1+...+A_n\alpha_n=\langle A,v\rangle$
+    \item sea: $\partial f_a=\left(\frac{\partial f}{x_1}(a),...,\frac{\partial f}{x_n}(a)\right)$, entonces
+    \[f(a+v)-f(a)=\sum_{i=1}^n\frac{\partial f}{\partial x_i}(a)\alpha_i+r(v)/\lim_{v\rightarrow0} \frac{r(v)}{|v|}=0\]
+    \item Si $f$ es diferenciable en $a$, entonces $f$ es continua
+\end{itemize}
+\noindent\textbf{Teorema del Valor Intermedio}
+
+sea $f:X\rightarrow\R$ una función continua, definida en un conjunto conexo $X\subset\R^n$, Si existen $a,b\in X$ y $d\in\R$ tales que $f(a)<d<f(b)$ entonces existe un $c\in X$ tal que $f(c)=d$.
+
+\noindent\textbf{Teorema del Valor Medio}
+
+
+Sean $U\subset \mathbb R^n$ un abierto, $a\in U$ y $v\in R^n$ y $f:U\subset\mathbb R^n\rightarrow \mathbb R$ una función de modo que $f|_{[a,a+v]}$ es continua y tal que $\frac{\partial f}{\partial v}(x)$ existe un $\theta\in (0,1)$ que cumple
+
+\[f(a+v)-f(a)=\frac{\partial f}{\partial v}(a+\theta v)\]
+
+\noindent\textbf{Derivada de una función}
+
+Sea $U\subset\R^n\rightarrow\R$ una función definida en un abierto $U\subset\R^n$. Si $f$ es diferenciable en $a\in U$, la derivada de $f$ en $a$ es una transformación lineal
+\[\partial f_a:\R^n\rightarrow\R\]
+definida como: 
+\[\partial f_a v=\left\langle\left(\frac{\partial f}{y_1}(a),...,\frac{\partial f}{y_n}(a)\right),v\right\rangle\]
+En otras palabras
+\[\partial f_a v=\sum_{i=1}^n \frac{\partial f}{x_i}(a)\alpha_i\quad v=(\alpha_1,...,\alpha_n)\]
+
+\noindent\textbf{Gradiente}
+
+Sea $U\subset\R^n\rightarrow\R$ una función diferenciable definida en un abierto $U\subset\R^n$. El gradiente de $f$ en $a\in U$ se define como el vector "Grad $f(a)$" dado por
+\[\langle grad\,f(a),v\rangle=\partial_{f_a} v\]
+Para todo $v\in \R^n$. 
+Tener en cuenta que el Gradiente es lo mismo que la derivada direccional
+
+\textbf{Observaciones}
+
+\[ grad\,f(a)=\left(\frac{\partial f}{\partial x_1}(a),...,\frac{\partial f}{\partial x_n}(a)\right)\]
+para espacios euclidianos.
+
+\noindent\textbf{Teorema de Schawrz}
+
+Sea $f:U\subset R^n\rightarrow R$ dos veces diferenciable en el punto $c\in U\subset\R^n$. para cualquier $1\leq i,j\leq n$, se tiene
+\[\frac{\partial^2 f}{\partial x_i\partial x_j}(c)=\frac{\partial^2 f}{\partial x_j\partial x_i}(c)\]
+
+\end{document}

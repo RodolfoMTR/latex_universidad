@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[14pt]{extsizes}%modified font size
+%--------------REFERENCIAS,CITAS
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+%--------------------
+\usepackage{tikz}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\I}{\mathbb I}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\title{Ecuaciones Diferenciales Parciales\\Apuntes de Clase}
+\author{Rodolfo Turpo Ramos}
+\date{\Today}
+%------------------DEFINICIONES,THEOREMAS,LEMAS
+\newtheorem{definition}{Definición}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem{Acla}{Aclaración}
+%-----------------------------------------
+\begin{document}
+Resolver
+\[u_t+au_x=u^2\quad u(x,0)=cos(x)\]
+\begin{align*}
+    \frac{d x(t)}{dt}&=a\\
+    x(t)=at+b\quad &\lor b=x-at\\
+    z(x(t),t)=\frac{1}{-t-K}\quad\lor\quad &K=-\frac{1}{z}-t
+\end{align*}
+\end{document}

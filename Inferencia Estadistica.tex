@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\begin{document}
+\textbf{Intervalos de confianza para 2 parámetros}
+\title{inferencia estadistica-IC para 2 parametros}
+\begin{itemize}
+    \item \textbf{\textcolor{red}{IC para $u_1-u_2$: varianzas son conocidas y poblacion normal.}}
+
+    error estandar del estimador: $\bar{x}_1-\bar{x}_2\rightarrow SE(\bar{x}_1-\bar{x}_2)=\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}$
+
+    $IC(u_1-u_2):\quad u_1-u_2\in\bar{x}_1-\bar{x}_2\pm Z_{\frac{\alpha}{2}}\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}$
+
+    margen de error= $Z_{\frac{\alpha}{2}}\times SE(\bar{x}_1-\bar{x}_2)$
+    \item \textcolor{red}{IC para $u_1-u_2$: Varianzas desconocidas y muestras grandes.}
+    
+    se asume que las varianzas muestrales se aproximan a sus varianzas poblacionales.
+    $\sigma^2_1\approx S^2_1 \quad y\quad \sigma^2_2\approx S^2_2$
+
+    error estandar estimado=$SEE(\bar{x}_1-\bar{x}_2)=\sqrt{\frac{S^2_1}{n_1}+\frac{S^2_2}{n_2}}$
+
+    $IC(u_1-u_2):\quad u_1-u_2\in\bar{x}_1-\bar{x}_2\pm Z_{\frac{\alpha}{2}}\sqrt{\frac{S^2_1}{n_1}+\frac{S^2_2}{n_2}}$
+
+    \textbf{\textcolor{red}{Interpretaciones diferencia de medias}}
+
+    -si se tiene una confianza que $u_1-u_2>0$ entonces $u_1>u_2$
+
+    -si se tiene una confianza que $u_1-u_2<0$ entonces $u_1<u_2$
+
+    -si 0 esta contenido en el IC para $u_1-u_2$ entonces en promedio existe un chance de que $u_1=u_2$
+
+    
+
+
+    \item \textcolor{red}{Poblaciones Normales con varianzas desconocidas.}
+    
+    caso1: varianzas desconocidas e iguales, $\sigma^2_1=\sigma^2_2=\sigma^2$
+
+    Estimador de la varianza $\sigma^2$ es dado por:
+
+    $S^2_p=\frac{(n_1-1)S^2_1+(n_2-1)S^2_2}{n_1+n_2-2}$, $S^2_1,s^2_2$ son varianzas muestrales de cada muestra.
+
+    grados de libertad $V=n_1+n_2-2$ y $SEE(\bar{x}_1-\bar{x}_2)=\sqrt{S^2_p\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}$
+
+    $IC(u_1-u_2):\quad u_1-u_2\in\bar{x}_1-\bar{x}_2\pm t_{v,\frac{\alpha}{2}}\sqrt{S^2_p\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}$
+    
+    caso 2: varianzas desconocidas y diferentes, 
+    $\sigma^2_1\neq\sigma^2_2$
+
+    grados de libertad:$v=\frac{\left [\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}\right]^2}{\frac{\left(\frac{s^2_1}{n_1}\right)^2}{n_1-1}+\frac{\left(\frac{s^2_2}{n_2}\right)^2}{n_2-1}}\quad SEE(\bar{x}_1-\bar{x}_2)=\sqrt{\frac{S^2_1}{n_1}+\frac{S^2_2}{n_2}}$
+
+    $IC(u_1-u_2):\quad u_1-u_2\in\bar{x}_1-\bar{x}_2\pm t_{v,\frac{\alpha}{2}}\sqrt{\frac{S^2_1}{n_1}+\frac{S^2_2}{n_2}}$
+
+    \textcolor{red}{si $v>30$ entonces se usa Z}
+
+    \textcolor{red}{si NO indica $\sigma^2_1=\sigma^2_2$ entonces se considera $\sigma^2_1\neq\sigma^2_2$ 
+    }
+    \newpage
+    \item \textcolor{red}{IC para $P_1-P_2$}
+
+    $\widehat{P}_1=\frac{x_1}{n_1}\rightarrow x_1=$ núm. éxitos muestra 1
+
+    $\widehat{P}_2=\frac{x_2}{n_2}\rightarrow x_2=$ núm. éxitos muestra 2
+
+    estimación puntual para $P_1-P_2=\widehat{P}_1-\widehat{P}_2$
+
+    $SEE(\widehat{P}_1-\widehat{P}_2)=\sqrt{\frac{\widehat{P}_1(1-\widehat{P}_1)}{n_1}+\frac{\widehat{P}_2(1-\widehat{P}_2)}{n_2}}$
+    
+    $ IC(\widehat{P}_1-\widehat{P}_2): P_1-P_2\in \widehat{P}_1-\widehat{P}_2\pm Z_{\frac{\alpha}{2}}\times\sqrt{\frac{\widehat{P}_1(1-\widehat{P}_1)}{n_1}+\frac{\widehat{P}_2(1-\widehat{P}_2)}{n_2}}$
+
+    \item \textcolor{red}{IC Para la razón de varianzas $\sigma^2_1/\sigma^2_2$}
+
+    si $\sigma^2_1/\sigma^2_2$ es próximo a 1 entonces se tiene alguna evidencia que las varianzas son iguales.
+
+    $v_1=n_1-1\quad v_2=n_2-1$
+
+    $IC(\sigma^2_1/\sigma^2_2): \sigma^2_1/\sigma^2_2\in\left(\frac{S^2_1}{S^2_2}\times\frac{1}{f_{\frac{\alpha}{2},v_1,v_2}};\frac{S^2_1}{S^2_2}\times f_{\frac{\alpha}{2},v_2,v_1}\right)$
+    
+\end{itemize}
+\end{document}

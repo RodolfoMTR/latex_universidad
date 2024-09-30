@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[14pt]{extsizes}%modified font size
+%--------------REFERENCIAS,CITAS
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+%--------------------
+\usepackage{tikz}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\I}{\mathbb I}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\title{Ecuaciones Diferenciales Parciales\\Apuntes de Clase}
+\author{Rodolfo Turpo Ramos}
+\date{\Today}
+%------------------DEFINICIONES,THEOREMAS,LEMAS
+\newtheorem{definition}{Definición}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem{Acla}{Aclaración}
+%-----------------------------------------
+\begin{document}
+De la media, se considera $\pm 3\sigma$, ahí se encuentra la mayoría de datos, exactamente 99.72\% de toda la distribución.
+
+en términos del rango itercuartil IQR
+Método de detección de outliers con IQR
+min: $Q_1-1.5ISQ$
+max: $Q_3+1.5IQR$
+luego, este es el valor mínimo y máximo de lo que vamos a considerar datos normales, y todo lo que este fuera serán considerados datos anómalos.
+
+que pasa cuando la dis. de datos no es simétrica, y es sesgada?
+en este caso no aplica el método anterior, lo que se hace es generalizar el criterio anterior para desestimar los puntos anómalos. entonces en general\\
+min: $Q_1-1.5f(IQR)$\\
+max: $Q_2+1.5g(IQR)$\\
+la desviación estandar es otra medida para calcular la dispersión de los datos de un conjunto cualquiera
+\end{document}

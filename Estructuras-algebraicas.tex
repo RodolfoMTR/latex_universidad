@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[14pt]{extsizes}%modified font size
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[spanish]{babel}
+\title{Estructuras Algebraicas}
+\author{Rodolfo Turpo Ramos}
+\date{10 de agosto del 2024}
+\newtheorem*{remark}{Observación}
+\begin{document}
+
+\maketitle
+\section{Operación Binaria}
+Sea $A$ un conjunto no vació. Una Operación binaria $*$ en A, es una regla que asigna a cada par de elementos ordenados en $A$, algún elemento del conjunto $A$.
+\section{Semigrupos}
+Sea $S$ un conjunto no vacio provisto de una operación $*$. Diremos que $S$ con la operación $*$, denotado por $(S,*)$, es un semigrupo si:
+\begin{itemize}
+    \item[S1] \textbf{Clausura: }$\forall a,b\in S: a*b\in S$,
+    \item[S2] \textbf{Asociativa: }$\forall a,b,c\in S: (a*b)*c=a*(b*c)$
+\end{itemize}
+\section{Monoide}
+Sea un Semigrupo $(S,*)$. Si $S$ posee un elemento neutro, diremos que $(S,*)$ es un \textbf{monoide}.
+\section{Grupos}
+\textit{Un \textbf{Grupo} $G$ es un conjunto de elementos dotado con una operación binaria $(*)$ que satisfacen las siguientes propiedades:
+    \begin{itemize}
+        \item \textbf{Clausura: }$\forall a,b \in G$ se tiene $a*b\in G$
+        \item \textbf{Asociativa: } $\forall a,b,c \in G$ se tiene $(a*b)*c=a*(b*c)$
+        \item \textbf{Elementos Neutro: } $\exists !e\in G$ tal que $a*e=e*a=a,~~ \forall a\in G$
+        \item \textbf{Inverso: }$\exists ! a'\in G$ tal que $a*a'=a'*a=e,~~\forall a\in G$
+    \end{itemize}}
+\subsection{Grupo Abeliano}
+Se le dice \textbf{Grupo conmutativo o Abeliano} a $G$ si además de cumplir las cuatro propiedades previas, cumple con la siguiente propiedad:
+    \begin{itemize}
+        \item \textbf{Conmutativa: }$\forall a,b \in G$ para todo $a*b=b*a$
+    \end{itemize}
+\subsection{Grupo finito e infinito}
+Sea $G$ un \textbf{conjunto finito}, entonces diremos que $G$ es un \textbf{grupo finito}. Caso contrario, se dice que $G$ es grupo infinito.
+\section{Subgrupo}
+Un subconjunto $H$ de un grupo $G$ es un subgrupo de $G$ si y sólo si
+\begin{itemize}
+    \item[S1.] La operación binaria en $G$ es cerrada en $H$,
+    \item[S2.] La identidad $e$ de $G$ esta en $H$,
+    \item[S3.] $\forall a\in H: a^{-1}\in H$ 
+\end{itemize}
+\subsection{Subgrupos Ciclicos}
+Sea $a$ un elemento de orden $n$ en el grupo $G$(de forma multiplicativa). Ahora consideremos el subconjunto
+\[\{a^0,a^1,a^2,...,a^{n-1}\}\]
+de $G$.
+\section{Permutaciones}
+\subsection{Permutación}
+Una permutación de un conjunto $A$ es una función $\phi : A \rightarrow A$ que es tanto inyectiva como sobreyectiva.
+\subsection{Grupo simétrico $S_n$}
+Sea $A$ el conjunto finito $\{1, 2, \dots, n\}$. El grupo de todas las permutaciones de $A$ es el grupo simétrico de $n$ elementos, y se denota por $S_n$.\\
+Nótese que $S_n$ tiene $n!$ elementos, donde $n! = n(n - 1)(n - 2) \dotsm (3)(2)(1)$.
+\subsection{Grupo de Permutaciones}
+Se llama grupo de permutaciones al conjunto $S_n$ provisto de la operación de composición de funciones $o$, que escribiremos $(S_n,o)$
+\section{Homomorfismo de Grupos}
+Sean $(G,*)$ y $(W,o)$, por comodidad simplemente escribiremos $G$ y $W$.
+
+Una función $f:G\longrightarrow W$, se llama \textbf{Homomorfismo} si y sólo si, para todo $x_1,x_2\in G$ se cumple
+\[f(x_1*x_2)=f(x_1)\,o\,f(x_2)\]
+\subsection{Núcleo de un Homomorfismo de grupos}
+Sea $f:G\longrightarrow W$ un homomorfismo de grupos, su correspondiente núcleo sera definido por
+\[N(f)=\{x\in G\textit{ tal que }f(x)=e',e'\in W\}\]
+También denotado por $ker(f)$.
+\section{Isomorfismo de Grupos}
+Dos grupos $(G,*)$ y $(W,o)$ son isomorfos, si existe una función biyectiva $\phi:G\longrightarrow W$ tal que
+\[\phi(x_1*x_2)=\phi(x_1)\,o\,\phi(x_2)\quad,\forall x_1,x_2\in G\]
+\subsection{Isomorfismo Inverso}
+Sea $\phi:G\longrightarrow W$ un isomorfismo de grupos, entonces la aplicación inversa $\phi^{-1}:W\longrightarrow G$ es también un isomorfismo
+\section{Anillos}
+$(G,*,o)$ es un anillo si 
+\begin{itemize}
+    \item[S1.] $(G,*)$ es un grupo abeliano,
+    \item[S2.] $(G,o)$ es un semigrupo,
+    \item[S3.] El operador $o$ es distributiva con $*$,i.e. $a\,o\,(b*c)=(a\,o\,b)*(a\,o\,c)$
+\end{itemize}
+\subsection{Anillo Unitario}
+Sea $(A,*,o)$ un anillo y asumamos que existe un $e\in (A,o)$ tal que
+\[a\,o\,e=e\,o\,a=a\quad \forall a\in A\]
+entonces $A$ es un anillo unitario o anillo con unidad.
+\subsection{Anillo Conmutativo}
+Sea $(A,*,o)$ un anillo, si $a,b\in A$ se tiene
+\[a\,o\,b=b\,o\,a\]
+Entonces el anillo $A$ se dice anillo conmutativo o abeliano.
+\begin{remark}
+    Si $(A,*,o)$ es un anillo, se dice que un elemento $a\in A$ es \textbf{invertible}, si existe otro elemento $a'\in A$ tal que 
+    \[a\,o\,a'=a'\,o\,a=e\quad,\textit{donde } e\in(A,o)\]
+\end{remark}
+\subsection{Anillo de división}
+Se llama anillo de división a un anillo con unidad, en donde todos los elementos distintos de cero son invertibles.
+\section{Cuerpos}
+Se llama cuerpo a un anillo conmutativo con unidad, en donde todos los elementos distintos de cero son invertibles
+\end{document}
